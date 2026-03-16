@@ -8,6 +8,7 @@
 \usepackage{varwidth}
 \usepackage[margin=1.3in]{geometry}
 \usepackage{float}
+\usepackage{booktabs}
 
 \title{Optimizing Temporal Regularity of Noise-Induced Spikes in the FitzHugh-Nagumo Model}
 \author{Kevin Halimman}
@@ -29,9 +30,9 @@ The goal of this project is to investigate the dynamics of the stochastic FitzHu
 \section{Research Question and Hypothesis}
 The central research question of this project is: Is there an optimal noise intensity that maximizes the temporal regularity of noise-induced spikes in the excitable FitzHugh-Nagumo model? In other words, can action potentials achieve near-periodic behavior in the presence of stochastic perturbations? Temporal regularity refers to the degree to which successive spikes occur at approximately equal time intervals. If the noise is too weak, spikes may occur very rarely and at irregular times. Conversely, if the noise is too strong, fluctuations may dominate the dynamics and produce highly irregular spiking behavior. Based on this reasoning, we hypothesize that there exists an intermediate noise intensity that produces spikes occurring at approximately equal time intervals, resulting in maximized temporal regularity of noise-induced spiking. This phenomenon is related to the concept of coherence resonance, in which stochastic perturbations can enhance the regularity of oscillations in excitable systems.
 
-\section{Model Formulation}
+\section{Model Formulation and Simulation}
 \subsection{Deterministic FHN}
-For the deterministic model, we study the set of equations:
+For the deterministic model, we study the set of equations
 \begin{eqnarray}
     \dot{v}&=&v-\frac{v^3}{3}-w+I \\
     \dot{w}&=&\varepsilon(v+a-bw)
@@ -48,14 +49,14 @@ The nullclines of (1) and (2) are
     J=\begin{bmatrix}1-v^2 & -1 \\
 \varepsilon & -\varepsilon b\end{bmatrix}
 \end{equation}
-We compute the eigenvalues of $J$ at each stationary point to determine their stability. For $I=0.1$, the eigenvalues are complex conjugates with negative real parts, indicating that the stationary point is a stable focus. For $I=0.5$, the eigenvalues are complex conjugates with positive real parts, indicating that the stationary point is an unstable focus. For $I=0.9$, the eigenvalues are real and positive, indicating that the stationary point is an unstable node. In the first case, the system is in a resting state where small perturbations do not lead to significant changes in phase space. However, in the second and third cases, the system is in an excitable regime where small perturbations can lead to large excursions in phase space, resulting in spike generation. Therefore, the nature of the excitability and the response to perturbations may differ case by case due to differences in the stability properties of the stationary points. And since all three stationary points are hyperbolic we can invoke the Hartman-Grobman theorem to conclude that the local dynamics near each stationary point are qualitatively similar to the dynamics of the linearized system given by the Jacobian matrix.
+We compute the eigenvalues of $J$ at each stationary point to determine their stability. For $I=0.1$, the eigenvalues are complex conjugates with negative real parts, indicating that the stationary point is a stable focus. For $I=0.5$, the eigenvalues are complex conjugates with positive real parts, indicating that the stationary point is an unstable focus. For $I=0.9$, the eigenvalues are real and positive, indicating that the stationary point is an unstable node. In the first case, the system is in a resting state where small perturbations do not lead to significant changes in phase space. However, in the second and third cases, the system is in an excitable regime where small perturbations can lead to large excursions in phase space, resulting in spike generation. Therefore, the nature of the excitability and the response to perturbations may differ case by case due to differences in the stability properties of the stationary points. And since the stationary point is hyperbolic in all three cases, we can invoke the Hartman-Grobman theorem to conclude that the local dynamics near the equilibrium are qualitatively similar to the dynamics of the linearized system given by the Jacobian matrix.
 
 To provide a visual representation of the dynamics, we can plot the phase portraits of the system for each value of $I$. The phase portraits show the trajectories of the system in the $v$-$w$ plane, along with the nullclines and stationary points. 
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figure1.png}
-    \includegraphics[width=0.8\textwidth]{Figure2.png}
-    \includegraphics[width=0.8\textwidth]{Figure3.png}
+    \includegraphics[width=0.8\textwidth]{phase_plane_0.1.png}
+    \includegraphics[width=0.8\textwidth]{phase_plane_0.5.png}
+    \includegraphics[width=0.8\textwidth]{phase_plane_0.9.png}
     \caption{Phase portraits of the deterministic FitzHugh-Nagumo model for different values of input current $I$. The nullclines are shown in red lines and the stationary points are marked with dots. The trajectories illustrate the dynamics of the system in the $v$-$w$ plane.}
 \end{figure}
 For $I=0.1$, we observe that trajectories spiral towards the stable focus, indicating that the system is in a resting state. For $I=0.5$, we observe that trajectories spiral away from the unstable focus, indicating that the system is in an excitable regime where small perturbations can lead to large excursions in phase space. For $I=0.9$, we observe that the trajectories diverge away from the unstable node and approach a limit cycle, indicating that the system is in an oscillatory regime where it exhibits periodic spiking behavior. These phase portraits provide insight into the qualitative dynamics of the system under different input currents and illustrate how the stability properties of the stationary points influence the overall behavior of the system.
@@ -64,7 +65,7 @@ To gain a further understanding of how the system evolves over time, we can also
 \begin{figure} [H]
     \centering
     \includegraphics[width=1\textwidth]{CompositeFigure4-5.png}
-    \caption{Time series of the membrane potential $v$ for different values of input current $I$. The plots illustrate how the system evolves over time, showing the transition from resting state to periodic spiking behavior as $I$ increases.} 
+    \caption{Time series of the membrane potential $v$ for different values of input current $I$. The plots illustrate how the system evolves over time, showing the transition from resting state to periodic spiking behavior as $I$ increases from 0 to 1.5.} 
 \end{figure}
 \begin{figure} [H]
     \centering
@@ -75,4 +76,61 @@ To gain a further understanding of how the system evolves over time, we can also
 
 The deterministic system therefore exhibits three qualitatively unique regimes of behavior depending on the value of $I$: a resting state for low input currents, an excitable regime for intermediate input currents, and an oscillatory regime for high input currents. The excitable regime is particularly important for our study because it is in this regime that noise can induce spikes. In real neurons, such perturbations often arise from random fluctuations caused by ion channel noise or other stochastic processes, thus motivating our extension of the deterministic formulation to a stochastic version of the model.
 \subsection{Stochastic FHN}
+For the stochastic model, we study the set of equations
+\begin{eqnarray}
+    dv&=&\left(v-\frac{v^3}{3}-w+I\right)dt+\sigma dW_t \\
+    dw&=&\varepsilon(v+a-bw)dt
+\end{eqnarray}
+where $\sigma$ represents the volatility or noise intensity and $W_t$ represents a standard Wiener process. Notice that when we take $\sigma =0$, our system mirrors the deterministic case. The noise term $\sigma dW_t$ introduces stochastic perturbations to the membrane potential, which can lead to noise-induced spiking behavior even when the system is in a resting state in the deterministic case. 
+
+To investigate the effect of noise on the dynamics of the system, we can perform numerical simulations of the stochastic FitzHugh-Nagumo model for different values of $\sigma$. Most commonly, the Euler-Maruyama method is used to approximate the solution of the SDEs, which involves discretizing time into small steps and iteratively updating the values of $v$ and $w$. Thus, we will use
+\begin{equation}
+    v_{n+1}=v_n+\left(v_n-\frac{v_n^3}{3}-w_n+I\right)\Delta t+\sigma \sqrt{\Delta t} Z_n
+\end{equation}
+where we have approximated the increment $\Delta W_n$ as $\sqrt{\Delta t} Z_n$ based on the properties of Brownian motion and used $Z_n$ as standard normal random variable $N(0,1)$. We can also update $w$ using the deterministic update rule since it does not have a noise term:
+\begin{equation}
+    w_{n+1}=w_n+\varepsilon(v_n+a-bw_n)\Delta t
+\end{equation}
+Literature suggests that $\sigma=0.2$ is considered strong noise so we will sweep $\sigma$ from $0.0$ to $0.4$ to stay within a physiologically relevant range. Additionally, we will use $I=0.1$ because it places the system in a resting state in the deterministic case, allowing us to observe noise-induced spiking behavior. 
+
+For each value of $\sigma$, we will run 30 trials of the simulation to compute statistics on the inter-spike intervals (ISIs) and spike counts, which will allow us to analyze the temporal regularity of the noise-induced spikes. Then we can plot the mean coefficient of variation (CV) of the ISIs and the mean spike count as a function of $\sigma$ to investigate whether there is an optimal noise intensity that maximizes temporal regularity. Note that we define the CV of ISIs as
+\begin{equation}
+    CV = \frac{\sigma_{ISI}}{\mu_{ISI}}
+\end{equation}
+where $\sigma_{ISI}$ is the standard deviation of the ISIs and $\mu_{ISI}$ is the mean of the ISIs. A lower CV indicates more regular spiking behavior, while a higher CV indicates more irregular spiking behavior. Therefore, if there exists an optimal noise intensity that maximizes temporal regularity, we would expect to see a minimum in the mean CV as a function of $\sigma$, the noise intensity.
+
+We now examine the results of the stochastic simulations across the range of noise intensities. For each value of $\sigma$, the model was simulated for multiple trials and the resulting spike statistics were aggregated to compute the mean coefficient of variation (CV) of the inter-spike intervals and the mean spike count.
+
+Figure~\ref{fig:cv_vs_sigma} shows the mean CV of the inter-spike intervals as a function of the noise intensity. For very small values of $\sigma$, the system rarely produces spikes because the deterministic system lies in a resting state. As a result, the few spikes that do occur are highly irregular, leading to large variability in the CV. As the noise intensity increases, the system begins to spike more regularly due to noise-induced threshold crossings.
+
+Interestingly, the CV initially decreases as $\sigma$ increases, indicating that the spike timing becomes more regular. This phenomenon is consistent with coherent resonance, where an intermediate level of noise can enhance temporal regularity in an otherwise quiescent excitable system. Beyond this region, further increases in noise intensity gradually increase variability again as the noise begins to dominate the dynamics.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{cv_vs_sigma.png}
+\caption{Mean coefficient of variation (CV) of the inter-spike intervals as a function of noise intensity $\sigma$. Error bars represent the standard deviation across trials.}
+\label{fig:cv_vs_sigma}
+\end{figure}
+
+To further understand the effect of noise on the activity of the system, we also examine the mean spike count as a function of noise intensity. The results are shown in Figure~\ref{fig:spikecount_vs_sigma}. As expected, the number of spikes increases monotonically with increasing $\sigma$. When $\sigma$ is small, the noise is insufficient to push the membrane potential past the excitation threshold, resulting in few or no spikes. As the noise intensity increases, stochastic fluctuations increasingly drive the system across the threshold, leading to more frequent spiking events.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{spikecount_vs_sigma.png}
+\caption{Mean spike count as a function of noise intensity $\sigma$. Error bars represent the standard deviation across trials.}
+\label{fig:spikecount_vs_sigma}
+\end{figure}
+
+Finally, to illustrate how the qualitative behavior of the membrane potential changes with noise intensity, sample trajectories of the membrane potential $v(t)$ are shown for several representative values of $\sigma$ in Figure~\ref{fig:trajectories}. At very low noise levels, the system remains near its resting state with only small fluctuations. As $\sigma$ increases, occasional excursions away from the resting state occur, producing isolated spikes. For larger values of $\sigma$, the system exhibits sustained stochastic spiking with increasingly frequent firing events.
+
+These trajectories highlight how noise can fundamentally alter the dynamical behavior of an excitable system. Even though the deterministic model remains at rest, stochastic perturbations can induce repeated threshold crossings and generate spike trains.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{sample_trajectory.png}
+\caption{Sample membrane potential trajectories $v(t)$ for selected values of the noise intensity $\sigma$. Increasing noise leads to more frequent noise-induced spikes.}
+\label{fig:trajectories}
+\end{figure}
+
+Together, these results demonstrate how stochastic perturbations can induce spiking behavior in an excitable system and influence the temporal regularity of the resulting spike trains. The presence of a minimum in the CV curve suggests the existence of an optimal noise intensity that maximizes temporal regularity, a hallmark of stochastic resonance.
 \end{document}
