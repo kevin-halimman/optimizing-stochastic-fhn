@@ -20,7 +20,7 @@
 
 \section{Introduction}
 \doublespacing
-Neurons communicate through electrical signals known as action potentials, which arise from complex interactions between ionic currents across the cell membrane. The classical model describing this behavior is the Hodgkin–Huxley model, which accurately captures the dynamics of ion channels responsible for spike generation. However, the Hodgkin-Huxley model consists of four coupled nonlinear differential equations many parameters to consider, making it extremely difficult to conduct analytical studies utilizing the model.
+Neurons communicate through electrical signals known as action potentials, which arise from complex interactions between ionic currents across the cell membrane. The classical model describing this behavior is the Hodgkin–Huxley model, which accurately captures the dynamics of ion channels responsible for spike generation. However, the Hodgkin-Huxley model consists of four coupled nonlinear differential equations with many parameters to consider, making it extremely difficult to conduct analytical studies utilizing the model.
 
 To better understand the qualitative mechanism underlying neuronal excitability, we use the FitzHugh-Nagumo model which still captures the essential dynamics of spike generation while only using two variables: one representing membrane potential and another representing inhibitory processes. And despite the reductions in the model, the FitzHugh-Nagumo model still reproduces key behaviors such as threshold dynamics, refractory periods, and oscillatory spiking.
 
@@ -44,7 +44,7 @@ The nullclines of (1) and (2) are
     w&=&v-\frac{v^3}{3}+I \\
     w&=&\frac{v+a}{b}
 \end{eqnarray}
-, respectively. Thus, solving for the stationary points would yield different results depending on the input current. For example, when $I=0.1$, there is a stationary point at approximately $(-1.14, -0.55)$. When $I=0.5$, there is only one stationary point at approximately $(-0.80, -0.13)$. When $I=0.9$, there is only one stationary point at approximately $(0.10, 1.0)$. The stability of these points can be determined by analyzing the Jacobian matrix of the system at each point. Consider the Jacobian matrix:
+, respectively. Thus, solving for the stationary points would yield different results depending on the input current. For example, when $I=0.1$, there is one stationary point at approximately $(-1.14, -0.55)$. When $I=0.5$, there is one stationary point at approximately $(-0.80, -0.13)$. When $I=0.9$, one stationary point at approximately $(0.10, 1.0)$. The stability of these points can be determined by analyzing the Jacobian matrix of the system at each point. Consider the Jacobian matrix:
 \begin{equation}
     J=\begin{bmatrix}1-v^2 & -1 \\
 \varepsilon & -\varepsilon b\end{bmatrix}
@@ -87,11 +87,11 @@ To investigate the effect of noise on the dynamics of the system, we can perform
 \begin{equation}
     v_{n+1}=v_n+\left(v_n-\frac{v_n^3}{3}-w_n+I\right)\Delta t+\sigma \sqrt{\Delta t} Z_n
 \end{equation}
-where we have approximated the increment $\Delta W_n$ as $\sqrt{\Delta t} Z_n$ based on the properties of Brownian motion and used $Z_n$ as standard normal random variable $N(0,1)$. We can also update $w$ using the deterministic update rule since it does not have a noise term:
+where we have approximated the increment $\Delta W_n$ as $\sqrt{\Delta t} Z_n$ based on the properties of Brownian motion and used $Z_n$ as standard normal random variable $N(0,1)$. We can also update $w$ using the deterministically since it does not have a noise term:
 \begin{equation}
     w_{n+1}=w_n+\varepsilon(v_n+a-bw_n)\Delta t
 \end{equation}
-Literature suggests that $\sigma=0.2$ is considered strong noise so we will sweep $\sigma$ from $0.0$ to $0.4$ to stay within a physiologically relevant range. Additionally, we will use $I=0.1$ because it places the system in a resting state in the deterministic case, allowing us to observe noise-induced spiking behavior. 
+Literature suggests that $\sigma=0.2$ is considered strong noise so we will sweep $\sigma$ from $0.0$ to $0.4$ to stay within a physiologically relevant range. Additionally, we set $I=0.1$ so that the deterministic system remains at a stable resting equilibrium (no sustained spiking), allowing us to isolate noise-induced spikes and test whether an intermediate noise intensity maximizes their temporal regularity (coherence resonance). 
 
 For each value of $\sigma$, we will run 30 trials of the simulation to compute statistics on the inter-spike intervals (ISIs) and spike counts, which will allow us to analyze the temporal regularity of the noise-induced spikes. Then we can plot the mean coefficient of variation (CV) of the ISIs and the mean spike count as a function of $\sigma$ to investigate whether there is an optimal noise intensity that maximizes temporal regularity. Note that we define the CV of ISIs as
 \begin{equation}
@@ -132,5 +132,5 @@ These trajectories highlight how noise can fundamentally alter the dynamical beh
 \label{fig:trajectories}
 \end{figure}
 
-Together, these results demonstrate how stochastic perturbations can induce spiking behavior in an excitable system and influence the temporal regularity of the resulting spike trains. The presence of a minimum in the CV curve suggests the existence of an optimal noise intensity that maximizes temporal regularity, a hallmark of stochastic resonance.
+Together, these results demonstrate how stochastic perturbations can induce spiking behavior in an excitable system and influence the temporal regularity of the resulting spike trains. The presence of convergence to what looks like a minimum in the CV curve suggests the existence of an optimal noise intensity that maximizes temporal regularity, a trademark of coherence resonance.
 \end{document}
