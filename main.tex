@@ -9,6 +9,10 @@
 \usepackage[margin=1.3in]{geometry}
 \usepackage{float}
 \usepackage{booktabs}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
 
 \title{Optimizing Temporal Regularity of Noise-Induced Spikes in the FitzHugh-Nagumo Model}
 \author{Kevin Halimman}
@@ -24,11 +28,11 @@ Neurons communicate through electrical signals known as action potentials, which
 
 To better understand the qualitative mechanism underlying neuronal excitability, we use the FitzHugh-Nagumo model which still captures the essential dynamics of spike generation while only using two variables: one representing membrane potential and another representing inhibitory processes. And despite the reductions in the model, the FitzHugh-Nagumo model still reproduces key behaviors such as threshold dynamics, refractory periods, and oscillatory spiking.
 
-In ideal, deterministic settings, the FitzHugh-Nagumo system exhibits dynamics that can be studied using analytical tools from nonlinear dynamical systems theory like phase portraits, nullclines, and limit cycle analysis. For example, the Poincaré-Bendixson theorem allows us to determine if there exists a limit cycle or periodic spiking behavior within some trapping region in a phase space. However, real biological systems are inherently noisy. Ion collisions, thermal fluctuations, and other phenomenon introduce randomness into neuronal dynamics. To account for these effects, we turn to the stochastic Fitz-Hugh-Nagumo system, typically formulated as a system of SDEs. 
+In ideal, deterministic settings, the FitzHugh-Nagumo system exhibits dynamics that can be studied using analytical tools from nonlinear dynamical systems theory like phase portraits, nullclines, and limit cycle analysis. For example, the Poincaré-Bendixson theorem allows us to determine if there exists a limit cycle (periodic spiking behavior) within some trapping region in a phase space. However, real biological systems are inherently noisy. Ion collisions, thermal fluctuations, and other phenomenon introduce randomness into neuronal dynamics. To account for these effects, we turn to the stochastic Fitz-Hugh-Nagumo system, typically formulated as a system of SDEs. 
 
-The goal of this project is to investigate the dynamics of the stochastic FitzHugh-Nagumo model using both theoretical analysis and numerical simulations. In particular, we explore how stochastic perturbations influence the trajectories of the system in a phase space, affect the regularity of spiking behavior, and modify the long-term dynamics compared to the deterministic case. By combining analytical methods with computational experiments, we illustrate how noise interacts with nonlinear dynamics in excitable biological systems.
+The goal of this project is to investigate the dynamics of the stochastic FitzHugh-Nagumo model using both theoretical analysis and numerical simulations. In particular, we explore how stochastic perturbations affect the regularity of spike trains and modify the long-term dynamics compared to the deterministic case. By combining analytical methods with computational experiments, we illustrate how noise interacts with nonlinear dynamics in excitable biological systems.
 \section{Research Question and Hypothesis}
-The central research question of this project is: Is there an optimal noise intensity that maximizes the temporal regularity of noise-induced spikes in the excitable FitzHugh-Nagumo model? In other words, can action potentials achieve near-periodic behavior in the presence of stochastic perturbations? Temporal regularity refers to the degree to which successive spikes occur at approximately equal time intervals. If the noise is too weak, spikes may occur very rarely and at irregular times. Conversely, if the noise is too strong, fluctuations may dominate the dynamics and produce highly irregular spiking behavior. Based on this reasoning, we hypothesize that there exists an intermediate noise intensity that produces spikes occurring at approximately equal time intervals, resulting in maximized temporal regularity of noise-induced spiking. This phenomenon is related to the concept of coherence resonance, in which stochastic perturbations can enhance the regularity of oscillations in excitable systems.
+The central research question of this project is: Is there an optimal noise intensity that maximizes the temporal regularity of noise-induced spikes in the excitable FitzHugh-Nagumo model? In other words, can action potentials achieve near-periodic behavior in the presence of stochastic perturbations, given that the system is excitable (membrane potential stays at resting potential after initial spike)? Temporal regularity refers to the degree to which successive spikes occur at approximately equal time intervals. If the noise is too weak, spikes may occur very rarely and at irregular times. Conversely, if the noise is too strong, fluctuations may dominate the dynamics and produce highly irregular spiking behavior. Based on this reasoning, we hypothesize that there exists an intermediate noise intensity that produces spikes occurring at approximately equal time intervals, resulting in maximized temporal regularity of noise-induced spiking. This phenomenon is related to the concept of coherence resonance, in which stochastic perturbations can enhance the regularity of oscillations in excitable systems.
 
 \section{Model Formulation and Simulation}
 \subsection{Deterministic FHN}
@@ -37,21 +41,43 @@ For the deterministic model, we study the set of equations
     \dot{v}&=&v-\frac{v^3}{3}-w+I \\
     \dot{w}&=&\varepsilon(v+a-bw)
 \end{eqnarray}
-where $v$ represents membrane potential, $w$ represents a recovery/inhibitory process, $I$ represents stimulus current, $a$ represents resting membrane potential, $b$ represents strength of recovery, and $\varepsilon$ represents a time-scale constant. Common values for the model's parameters are $a=0.7$, $b=0.8$, and $\varepsilon=0.08$.
+where $v$ represents membrane potential, $w$ represents a recovery/inhibitory process, $I$ represents stimulus current, $a$ represents resting membrane potential, $b$ represents strength of recovery, and $\varepsilon$ represents a time-scale constant. Following convention set by FitzHugh (1961), we set our parameters as $a=0.7$, $b=0.8$, and $\varepsilon=0.08$, putting our system in an excitable regime at small $I$.
 
 The nullclines of (1) and (2) are
 \begin{eqnarray}
     w&=&v-\frac{v^3}{3}+I \\
     w&=&\frac{v+a}{b}
 \end{eqnarray}
-, respectively. Thus, solving for the stationary points would yield different results depending on the input current. For example, when $I=0.1$, there is one stationary point at approximately $(-1.14, -0.55)$. When $I=0.5$, there is one stationary point at approximately $(-0.80, -0.13)$. When $I=0.9$, one stationary point at approximately $(0.10, 1.0)$. The stability of these points can be determined by analyzing the Jacobian matrix of the system at each point. Consider the Jacobian matrix:
+, respectively. Thus, solving for the stationary points would yield different results depending on the input current. For example, when $I=0.1$, there is one stationary point at approximately $(-1.14, -0.55)$. When $I=0.5$, there is one stationary point at approximately $(-0.80, -0.13)$. When $I=0.9$, one stationary point at approximately $(0.10, 1.0)$. These values of $I$ are chosen to fall within a biological range of $I\in [0,1.5]$ following the parameter study conducted by Hanan et al. (2020). The stability of these points can be determined by analyzing the Jacobian matrix of the system at each point. Consider the Jacobian matrix:
 \begin{equation}
     J=\begin{bmatrix}1-v^2 & -1 \\
 \varepsilon & -\varepsilon b\end{bmatrix}
 \end{equation}
-We compute the eigenvalues of $J$ at each stationary point to determine their stability. For $I=0.1$, the eigenvalues are complex conjugates with negative real parts, indicating that the stationary point is a stable focus. For $I=0.5$, the eigenvalues are complex conjugates with positive real parts, indicating that the stationary point is an unstable focus. For $I=0.9$, the eigenvalues are real and positive, indicating that the stationary point is an unstable node. In the first case, the system is in a resting state where small perturbations do not lead to significant changes in phase space. However, in the second and third cases, the system is in an excitable regime where small perturbations can lead to large excursions in phase space, resulting in spike generation. Therefore, the nature of the excitability and the response to perturbations may differ case by case due to differences in the stability properties of the stationary points. And since the stationary point is hyperbolic in all three cases, we can invoke the Hartman-Grobman theorem to conclude that the local dynamics near the equilibrium are qualitatively similar to the dynamics of the linearized system given by the Jacobian matrix.
+We compute the eigenvalues of $J$ at each stationary point to determine their stability. For $I=0.1$, the eigenvalues are complex conjugates with negative real parts, indicating that the stationary point is a stable focus. In this regime, the system is excitable such that trajectories remain near the equilibrium under small perturbations, but sufficiently large perturbations can trigger a spike (action potential) before returning to rest. For $I=0.5$, the eigenvalues are complex conjugates with positive real parts, indicating that the stationary point is an unstable focus. Similarly, for I=0.9, the eigenvalues are real and positive, corresponding to an unstable node. In both cases, the equilibrium has lost stability through a Hopf bifurcation (at some $I=I_H$). 
+But we still don't know what the long-term behavior of the system is for $I>I_H$. Does the membrane potential diverge to infinity? From a biological standpoint, probably not. 
+Does it approach a limit cycle? This is more likely but we'll need to prove this somehow. We can use the Poincaré-Bendixson theorem to help us analyze long-term behavior here. 
+The theorem states that if a trajectory of a two-dimensional dynamical system is confined to a compact region and does not converge to a stationary point, then it must approach
+a limit cycle. In other words, since we already know that at $I=0.5,0.9$ the stationary point is unstable, if we can show that trajectories are bounded and do not diverge to infinity,
+then we can conclude that there exists a limit cycle for $I> I_H$ which corresponds to periodic spiking behavior in the neuron.
 
-To provide a visual representation of the dynamics, we can plot the phase portraits of the system for each value of $I$. The phase portraits show the trajectories of the system in the $v$-$w$ plane, along with the nullclines and stationary points. 
+Although we don't exactly have a trapping region that we can explicitly define, a good first step is to show that the divergence
+of the vector field is negative which would imply that the system is dissipative and trajectories are confined to some
+bounded region in the phase space. The divergence of the vector field is given by
+\begin{equation}
+    \nabla \cdot F = \frac{\partial \dot{v}}{\partial v} + \frac{\partial \dot{w}}{\partial w} = (1-v^2) - \varepsilon b
+\end{equation}
+Since $\varepsilon b$ is a positive constant, the divergence will be negative for sufficiently large values of $v$. 
+However, this still isn't enough yet. We can also analyze the nullclines to gain insight into the behavior of trajectoris.
+We see that to leading order, the cubic nullcline (1) is dominated by the $-v^3/3$ term for large $|v|$, which will 
+cause trajectories to be pushed back towards the origin when $|v|$ is large.
+\begin{enumerate}
+    \item For $v>0$ and large in magnitude, the cubic nullcline will be negative and thus push trajectories downwards.
+    \item For $v<0$ and large in magnitude, the cubic nullcline will be positive and thus push trajectories upwards.
+\end{enumerate}
+So this loosely suggests that we have a trapping region in phase space and since at $I> I_H$ the stationary point is
+unstable, we can conclude that there exists a limit cycle for $I> I_H$ which corresponds to periodic spiking behavior
+in the neuron.
+To test our hypothesis, we can run various simulations and study the plots generated. Firstly, we can plot the phase portraits of the system for each value of $I$. The phase portraits show the trajectories of the system in the $v$-$w$ plane, along with the nullclines and stationary points. 
 \begin{figure} [H]
     \centering
     \includegraphics[width=0.8\textwidth]{phase_plane_0.1.png}
@@ -59,9 +85,17 @@ To provide a visual representation of the dynamics, we can plot the phase portra
     \includegraphics[width=0.8\textwidth]{phase_plane_0.9.png}
     \caption{Phase portraits of the deterministic FitzHugh-Nagumo model for different values of input current $I$. The nullclines are shown in red lines and the stationary points are marked with dots. The trajectories illustrate the dynamics of the system in the $v$-$w$ plane.}
 \end{figure}
-For $I=0.1$, we observe that trajectories spiral towards the stable focus, indicating that the system is in a resting state. For $I=0.5$, we observe that trajectories spiral away from the unstable focus, indicating that the system is in an excitable regime where small perturbations can lead to large excursions in phase space. For $I=0.9$, we observe that the trajectories diverge away from the unstable node and approach a limit cycle, indicating that the system is in an oscillatory regime where it exhibits periodic spiking behavior. These phase portraits provide insight into the qualitative dynamics of the system under different input currents and illustrate how the stability properties of the stationary points influence the overall behavior of the system.
+For $I=0.1$, we observe that trajectories spiral towards the stable  focus, indicating that the system is in an 
+excitable regime. For $I=0.5$, we observe that trajectories spiral around the unstable focus. And similarly,
+for $I=0.9$ we see that trajectories also never settle at the stationary point. These phase portraits 
+provide insight into the qualitative dynamics of the system under different input currents and essentially confirm our
+previous analysis of the stability of the stationary point.
 
-To gain a further understanding of how the system evolves over time, we can also plot the time series of $v$ and $w$ for each value of $I$. The time series show how the membrane potential and recovery variable change over time, providing insight into the temporal dynamics of the system. What we see is that from $I=0$ to $I=0.3$, the system stays at resting membrane potential after the initial spike. However, for $I>0.3$, the system exhibits unstable to periodic spiking behavior which is consistent with the phase portraits we observed earlier.
+To gain a further understanding of how the system evolves over time, we can also plot the time series of $v$ and $w$ 
+for each value of $I$. The time series show how the membrane potential and recovery variable change over time, 
+providing insight into the temporal dynamics of the system. What we see is that from $I=0$ to $I=0.3$, the system 
+stays at resting membrane potential after the initial spike. However, for $I>0.3$, the system exhibits unstable to 
+periodic spiking behavior which confirms our loose claims about the system's oscillatory behavior at $I>I_H$.
 \begin{figure} [H]
     \centering
     \includegraphics[width=1\textwidth]{CompositeFigure4-5.png}
@@ -74,7 +108,7 @@ To gain a further understanding of how the system evolves over time, we can also
     \label{fig:placeholder}
 \end{figure}
 
-The deterministic system therefore exhibits three qualitatively unique regimes of behavior depending on the value of $I$: a resting state for low input currents, an excitable regime for intermediate input currents, and an oscillatory regime for high input currents. The excitable regime is particularly important for our study because it is in this regime that noise can induce spikes. In real neurons, such perturbations often arise from random fluctuations caused by ion channel noise or other stochastic processes, thus motivating our extension of the deterministic formulation to a stochastic version of the model.
+The deterministic system therefore exhibits two qualitatively unique regimes of behavior depending on the value of $I$: an excitable regime for low input currents and an oscillatory regime for medium to high input currents. The excitable regime is particularly important for our study because it is in this regime that noise can induce spikes. In real neurons, such perturbations often arise from random fluctuations caused by ion channel noise or other stochastic processes, thus motivating our extension of the deterministic formulation to a stochastic version of the model.
 \subsection{Stochastic FHN}
 For the stochastic model, we study the set of equations
 \begin{eqnarray}
