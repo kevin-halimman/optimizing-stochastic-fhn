@@ -55,29 +55,29 @@ The nullclines of (1) and (2) are
 \end{equation}
 We compute the eigenvalues of $J$ at each stationary point to determine their stability. For $I=0.1$, the eigenvalues are complex conjugates with negative real parts, indicating that the stationary point is a stable focus. In this regime, the system is excitable such that trajectories remain near the equilibrium under small perturbations, but sufficiently large perturbations can trigger a spike (action potential) before returning to rest. For $I=0.5$, the eigenvalues are complex conjugates with positive real parts, indicating that the stationary point is an unstable focus. Similarly, for I=0.9, the eigenvalues are real and positive, corresponding to an unstable node. In both cases, the equilibrium has lost stability through a Hopf bifurcation (at some $I=I_H$). 
 But we still don't know what the long-term behavior of the system is for $I>I_H$. Does the membrane potential diverge to infinity? From a biological standpoint, probably not. 
-Does it approach a limit cycle? This is more likely but we'll need to prove this somehow. We can use the Poincaré-Bendixson theorem to help us analyze long-term behavior here. 
+Does it approach a limit cycle? Maybe. This is more likely but we'll need to prove this somehow. We can use the Poincaré-Bendixson theorem to help us analyze long-term behavior here. 
 The theorem states that if a trajectory of a two-dimensional dynamical system is confined to a compact region and does not converge to a stationary point, then it must approach
 a limit cycle. In other words, since we already know that at $I=0.5,0.9$ the stationary point is unstable, if we can show that trajectories are bounded and do not diverge to infinity,
 then we can conclude that there exists a limit cycle for $I> I_H$ which corresponds to periodic spiking behavior in the neuron.
 
 Although we don't exactly have a trapping region that we can explicitly define, a good first step is to show that the divergence
-of the vector field is negative which would imply that the system is dissipative and trajectories are confined to some
+of the vector field is negative which would imply that the system is dissipative and suggest that trajectories may be confined to some
 bounded region in the phase space. The divergence of the vector field is given by
 \begin{equation}
     \nabla \cdot F = \frac{\partial \dot{v}}{\partial v} + \frac{\partial \dot{w}}{\partial w} = (1-v^2) - \varepsilon b
 \end{equation}
 Since $\varepsilon b$ is a positive constant, the divergence will be negative for sufficiently large values of $v$. 
-However, this still isn't enough yet. We can also analyze the nullclines to gain insight into the behavior of trajectoris.
-We see that to leading order, the cubic nullcline (1) is dominated by the $-v^3/3$ term for large $|v|$, which will 
-cause trajectories to be pushed back towards the origin when $|v|$ is large.
+However, this still isn't enough yet. We can also analyze the vector fields to gain insight into the behavior of trajectories.
+We see that to leading order, $\dot{v}$ is dominated by the $-v^3/3$ term for large $|v|$, which will 
+cause trajectories to be pushed back towards the origin in the $v$-direction when $|v|$ is large. We can split this in two cases:
 \begin{enumerate}
     \item For $v>0$ and large in magnitude, the cubic nullcline will be negative and thus push trajectories downwards.
     \item For $v<0$ and large in magnitude, the cubic nullcline will be positive and thus push trajectories upwards.
 \end{enumerate}
-So this loosely suggests that we have a trapping region in phase space and since at $I> I_H$ the stationary point is
-unstable, we can conclude that there exists a limit cycle for $I> I_H$ which corresponds to periodic spiking behavior
+So combined with the dissipativity argument, this loosely suggests that we may have a trapping region in phase space and since at $I> I_H$ the stationary point is
+unstable, we can hypothesize that there exists a limit cycle for $I> I_H$ which corresponds to periodic spiking behavior
 in the neuron.
-To test our hypothesis, we can run various simulations and study the plots generated. Firstly, we can plot the phase portraits of the system for each value of $I$. The phase portraits show the trajectories of the system in the $v$-$w$ plane, along with the nullclines and stationary points. 
+To test this claim, we can run various simulations and study the plots generated. Firstly, we can plot the phase portraits of the system for each value of $I$. The phase portraits show the trajectories of the system in the $v$-$w$ plane, along with the nullclines and stationary points. 
 \begin{figure} [H]
     \centering
     \includegraphics[width=0.8\textwidth]{phase_plane_0.1.png}
@@ -125,9 +125,9 @@ where we have approximated the increment $\Delta W_n$ as $\sqrt{\Delta t} Z_n$ b
 \begin{equation}
     w_{n+1}=w_n+\varepsilon(v_n+a-bw_n)\Delta t
 \end{equation}
-Literature suggests that $\sigma=0.2$ is considered strong noise so we will sweep $\sigma$ from $0.0$ to $0.4$ to stay within a physiologically relevant range. Additionally, we set $I=0.1$ so that the deterministic system remains at a stable resting equilibrium (no sustained spiking), allowing us to isolate noise-induced spikes and test whether an intermediate noise intensity maximizes their temporal regularity (coherence resonance). 
+Literature suggests that $\sigma=0.2$ is considered strong noise so we will sweep $\sigma$ from $0.0$ to $0.4$ to stay within a physiologically relevant range. Additionally, we set $I=0.1$ so that the deterministic system remains at a stable resting equilibrium (excitable regime), allowing us to isolate noise-induced spikes and test whether an intermediate noise intensity maximizes their temporal regularity (coherence resonance). 
 
-For each value of $\sigma$, we will run 30 trials of the simulation to compute statistics on the inter-spike intervals (ISIs) and spike counts, which will allow us to analyze the temporal regularity of the noise-induced spikes. Then we can plot the mean coefficient of variation (CV) of the ISIs and the mean spike count as a function of $\sigma$ to investigate whether there is an optimal noise intensity that maximizes temporal regularity. Note that we define the CV of ISIs as
+For each value of $\sigma$, we will run 60 trials of the simulation to compute statistics on the inter-spike intervals (ISIs) and spike counts, which will allow us to analyze the temporal regularity of the noise-induced spikes. Then we can plot the mean coefficient of variation (CV) of the ISIs and the mean spike count as a function of $\sigma$ to investigate whether there is an optimal noise intensity that maximizes temporal regularity. Note that we define the CV of ISIs as
 \begin{equation}
     CV = \frac{\sigma_{ISI}}{\mu_{ISI}}
 \end{equation}
@@ -137,7 +137,10 @@ We now examine the results of the stochastic simulations across the range of noi
 
 Figure~\ref{fig:cv_vs_sigma} shows the mean CV of the inter-spike intervals as a function of the noise intensity. For very small values of $\sigma$, the system rarely produces spikes because the deterministic system lies in a resting state. As a result, the few spikes that do occur are highly irregular, leading to large variability in the CV. As the noise intensity increases, the system begins to spike more regularly due to noise-induced threshold crossings.
 
-Interestingly, the CV initially decreases as $\sigma$ increases, indicating that the spike timing becomes more regular. This phenomenon is consistent with coherent resonance, where an intermediate level of noise can enhance temporal regularity in an otherwise quiescent excitable system. Beyond this region, further increases in noise intensity gradually increase variability again as the noise begins to dominate the dynamics.
+Interestingly, the CV initially decreases as $\sigma$ increases, indicating that the spike timing becomes more regular. This phenomenon is somewhat related to coherence
+resonance but we ultimately don't observe a clear minimum in the mean CV as a function of $\sigma$. Instead, the CV appears to plateau at intermediate to high noise 
+intensities, suggesting that while noise can enhance the regularity of spiking to some extent, there may not be a well-defined optimal noise intensity that maximizes 
+temporal regularity in this particular system. 
 
 \begin{figure}[H]
 \centering
@@ -146,7 +149,7 @@ Interestingly, the CV initially decreases as $\sigma$ increases, indicating that
 \label{fig:cv_vs_sigma}
 \end{figure}
 
-To further understand the effect of noise on the activity of the system, we also examine the mean spike count as a function of noise intensity. The results are shown in Figure~\ref{fig:spikecount_vs_sigma}. As expected, the number of spikes increases monotonically with increasing $\sigma$. When $\sigma$ is small, the noise is insufficient to push the membrane potential past the excitation threshold, resulting in few or no spikes. As the noise intensity increases, stochastic fluctuations increasingly drive the system across the threshold, leading to more frequent spiking events.
+To further understand the effect of noise on the activity of the system, we also examine the mean spike count as a function of noise intensity. The results are shown in Figure~\ref{fig:spikecount_vs_sigma}. As expected, the number of spikes increases roughly monotonically with increasing $\sigma$. When $\sigma$ is small, the noise is insufficient to push the membrane potential past the excitation threshold, resulting in few or no spikes. As the noise intensity increases, stochastic fluctuations increasingly drive the system across the threshold, leading to more frequent spiking events.
 
 \begin{figure}[H]
 \centering
@@ -166,5 +169,6 @@ These trajectories highlight how noise can fundamentally alter the dynamical beh
 \label{fig:trajectories}
 \end{figure}
 
-Together, these results demonstrate how stochastic perturbations can induce spiking behavior in an excitable system and influence the temporal regularity of the resulting spike trains. The presence of convergence to what looks like a minimum in the CV curve suggests the existence of an optimal noise intensity that maximizes temporal regularity, a trademark of coherence resonance.
+Together, these results demonstrate how stochastic perturbations can induce spiking behavior in an excitable system and 
+influence the temporal regularity of the resulting spike trains. 
 \end{document}

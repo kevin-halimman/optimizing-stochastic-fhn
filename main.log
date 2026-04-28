@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.12)  25 APR 2026 04:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.12)  25 APR 2026 05:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,18 +284,18 @@ Package pdftex.def Info: CompositeFigure6-7.png  used on input line 106.
 <cv_vs_sigma.png, id=47, 743.77875pt x 451.6875pt>
 File: cv_vs_sigma.png Graphic file (type png)
 <use cv_vs_sigma.png>
-Package pdftex.def Info: cv_vs_sigma.png  used on input line 144.
+Package pdftex.def Info: cv_vs_sigma.png  used on input line 147.
 (pdftex.def)             Requested size: 319.79442pt x 194.20804pt.
 <spikecount_vs_sigma.png, id=48, 743.77875pt x 451.6875pt>
 File: spikecount_vs_sigma.png Graphic file (type png)
 <use spikecount_vs_sigma.png>
-Package pdftex.def Info: spikecount_vs_sigma.png  used on input line 153.
+Package pdftex.def Info: spikecount_vs_sigma.png  used on input line 156.
 (pdftex.def)             Requested size: 319.79442pt x 194.20804pt.
  [9 <./cv_vs_sigma.png>]
 <sample_trajectory.png, id=53, 743.77875pt x 451.6875pt>
 File: sample_trajectory.png Graphic file (type png)
 <use sample_trajectory.png>
-Package pdftex.def Info: sample_trajectory.png  used on input line 164.
+Package pdftex.def Info: sample_trajectory.png  used on input line 167.
 (pdftex.def)             Requested size: 383.7507pt x 233.05241pt.
  [10 <./spikecount_vs_sigma.png>] [11 <./sample_trajectory.png>] (main.aux)
  ***********
@@ -312,7 +312,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,7n,65p,1215b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (11 pages, 1433314 bytes).
+Output written on main.pdf (11 pages, 1433386 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
