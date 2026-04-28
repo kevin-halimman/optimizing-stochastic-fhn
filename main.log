@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.12)  25 APR 2026 05:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.12)  28 APR 2026 19:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -257,45 +257,45 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <phase_plane_0.1.png, id=20, 887.315pt x 451.6875pt>
 File: phase_plane_0.1.png Graphic file (type png)
 <use phase_plane_0.1.png>
-Package pdftex.def Info: phase_plane_0.1.png  used on input line 83.
+Package pdftex.def Info: phase_plane_0.1.png  used on input line 84.
 (pdftex.def)             Requested size: 341.11534pt x 173.64175pt.
 <phase_plane_0.5.png, id=22, 887.315pt x 451.6875pt>
 File: phase_plane_0.5.png Graphic file (type png)
 <use phase_plane_0.5.png>
-Package pdftex.def Info: phase_plane_0.5.png  used on input line 84.
+Package pdftex.def Info: phase_plane_0.5.png  used on input line 85.
 (pdftex.def)             Requested size: 341.11534pt x 173.64175pt.
 <phase_plane_0.9.png, id=23, 887.315pt x 451.6875pt>
 File: phase_plane_0.9.png Graphic file (type png)
 <use phase_plane_0.9.png>
-Package pdftex.def Info: phase_plane_0.9.png  used on input line 85.
+Package pdftex.def Info: phase_plane_0.9.png  used on input line 86.
 (pdftex.def)             Requested size: 341.11534pt x 173.64175pt.
  [4] [5 <./phase_plane_0.1.png> <./phase_plane_0.5.png> <./phase_plane_0.9.png>]
 <CompositeFigure4-5.png, id=33, 1758.57pt x 761.84625pt>
 File: CompositeFigure4-5.png Graphic file (type png)
 <use CompositeFigure4-5.png>
-Package pdftex.def Info: CompositeFigure4-5.png  used on input line 101.
+Package pdftex.def Info: CompositeFigure4-5.png  used on input line 102.
 (pdftex.def)             Requested size: 426.39256pt x 184.71843pt.
 <CompositeFigure6-7.png, id=34, 1758.57pt x 761.84625pt>
 File: CompositeFigure6-7.png Graphic file (type png)
 <use CompositeFigure6-7.png>
-Package pdftex.def Info: CompositeFigure6-7.png  used on input line 106.
+Package pdftex.def Info: CompositeFigure6-7.png  used on input line 107.
 (pdftex.def)             Requested size: 426.39256pt x 184.71843pt.
  [6 <./CompositeFigure4-5.png>] [7 <./CompositeFigure6-7.png>] [8]
 <cv_vs_sigma.png, id=47, 743.77875pt x 451.6875pt>
 File: cv_vs_sigma.png Graphic file (type png)
 <use cv_vs_sigma.png>
-Package pdftex.def Info: cv_vs_sigma.png  used on input line 147.
+Package pdftex.def Info: cv_vs_sigma.png  used on input line 148.
 (pdftex.def)             Requested size: 319.79442pt x 194.20804pt.
 <spikecount_vs_sigma.png, id=48, 743.77875pt x 451.6875pt>
 File: spikecount_vs_sigma.png Graphic file (type png)
 <use spikecount_vs_sigma.png>
-Package pdftex.def Info: spikecount_vs_sigma.png  used on input line 156.
+Package pdftex.def Info: spikecount_vs_sigma.png  used on input line 157.
 (pdftex.def)             Requested size: 319.79442pt x 194.20804pt.
  [9 <./cv_vs_sigma.png>]
 <sample_trajectory.png, id=53, 743.77875pt x 451.6875pt>
 File: sample_trajectory.png Graphic file (type png)
 <use sample_trajectory.png>
-Package pdftex.def Info: sample_trajectory.png  used on input line 167.
+Package pdftex.def Info: sample_trajectory.png  used on input line 168.
 (pdftex.def)             Requested size: 383.7507pt x 233.05241pt.
  [10 <./spikecount_vs_sigma.png>] [11 <./sample_trajectory.png>] (main.aux)
  ***********
@@ -304,15 +304,15 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3445 strings out of 467867
- 52910 string characters out of 5418334
- 459543 words of memory out of 5000000
- 32295 multiletter control sequences out of 15000+600000
- 635276 words of font info for 70 fonts, out of 8000000 for 9000
+ 3450 strings out of 467867
+ 52994 string characters out of 5418334
+ 460545 words of memory out of 5000000
+ 32300 multiletter control sequences out of 15000+600000
+ 636523 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,1215b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,7n,65p,1217b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (11 pages, 1433386 bytes).
+Output written on main.pdf (11 pages, 1433646 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
