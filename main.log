@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.12)  28 APR 2026 19:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.12)  30 APR 2026 05:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -171,39 +171,159 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count302
 \@lastruleclass=\count303
 \@thisrulewidth=\dimen182
-) (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip54
+\bibsep=\skip55
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count304
+) (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/breqn\breqn.sty (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+ (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count304
+\l__color_backend_stack_int=\count305
+))
+Package: breqn 2021/10/28 v0.98l Breaking equations
+ (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/breqn\flexisym.sty
+Package: flexisym 2021/10/28 v0.98l Make math characters macros
+LaTeX Info: Redefining \textprime on input line 299.
+LaTeX Info: Redefining \not on input line 357.
+ (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/breqn\cmbase.sym
+File: cmbase.sym 2007/12/19 v0.92
+LaTeX Info: Redefining \hbar on input line 324.
+LaTeX Info: Redefining \surd on input line 326.
+LaTeX Info: Redefining \angle on input line 334.
+LaTeX Info: Redefining \neq on input line 335.
+LaTeX Info: Redefining \mapsto on input line 336.
+LaTeX Info: Redefining \cong on input line 337.
+LaTeX Info: Redefining \notin on input line 340.
+LaTeX Info: Redefining \rightleftharpoons on input line 341.
+LaTeX Info: Redefining \doteq on input line 342.
+LaTeX Info: Redefining \hookrightarrow on input line 343.
+LaTeX Info: Redefining \hookleftarrow on input line 344.
+LaTeX Info: Redefining \bowtie on input line 345.
+LaTeX Info: Redefining \models on input line 346.
+LaTeX Info: Redefining \Longrightarrow on input line 347.
+LaTeX Info: Redefining \longrightarrow on input line 348.
+LaTeX Info: Redefining \Longleftarrow on input line 349.
+LaTeX Info: Redefining \longleftarrow on input line 350.
+LaTeX Info: Redefining \longmapsto on input line 351.
+LaTeX Info: Redefining \longleftrightarrow on input line 352.
+LaTeX Info: Redefining \Longleftrightarrow on input line 353.
+LaTeX Info: Redefining \cdots on input line 357.
+LaTeX Info: Redefining \vdots on input line 360.
+LaTeX Info: Redefining \ddots on input line 365.
+) (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/breqn\mathstyle.sty
+Package: mathstyle 2021/10/28 v0.98l Tracking mathstyle implicitly
+LaTeX Info: Redefining \displaystyle on input line 95.
+LaTeX Info: Redefining \textstyle on input line 97.
+LaTeX Info: Redefining \scriptstyle on input line 99.
+LaTeX Info: Redefining \scriptscriptstyle on input line 101.
+LaTeX Info: Redefining \genfrac on input line 149.
+)) (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count306
+\calc@Bcount=\count307
+\calc@Adimen=\dimen183
+\calc@Bdimen=\dimen184
+\calc@Askip=\skip56
+\calc@Bskip=\skip57
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count308
+\calc@Cskip=\skip58
+)
+\inf@bad=\count309
+\maxint=\count310
+\listwidth=\dimen185
+\eqnumsep=\dimen186
+\eqmargin=\dimen187
+\eqlinespacing=\skip59
+\eqlineskip=\skip60
+\eqlineskiplimit=\dimen188
+\eqbinoffset=\muskip18
+\eqdelimoffset=\muskip19
+\eqindentstep=\dimen189
+\eqstyle=\toks26
+\eqbreakdepth=\count311
+\eqinterlinepenalty=\count312
+\intereqpenalty=\count313
+\intereqskip=\skip61
+\prerelpenalty=\count314
+\prebinoppenalty=\count315
+\Dmedmuskip=\muskip20
+\Dthickmuskip=\muskip21
+\eqleftskip=\skip62
+\eqrightskip=\skip63
+\eq@vspan=\skip64
+\eq@binoffset=\muskip22
+\EQ@box=\box58
+\EQ@copy=\box59
+\EQ@numbox=\box60
+\eq@wdNum=\dimen190
+\GRP@numbox=\box61
+\grp@wdNum=\dimen191
+\eq@lines=\count316
+\eq@curline=\count317
+\eq@badness=\count318
+\EQ@vims=\count319
+\eq@dp=\dimen192
+\eq@wdL=\dimen193
+\eq@wdT=\dimen194
+\eq@wdMin=\dimen195
+\grp@wdL=\dimen196
+\grp@wdR=\dimen197
+\grp@wdT=\dimen198
+\eq@wdRmax=\dimen199
+\eq@firstht=\dimen256
+\eq@wdCond=\dimen257
+\eq@indentstep=\dimen258
+\eq@linewidth=\dimen259
+\grp@linewidth=\dimen260
+\eq@hshift=\dimen261
+\eq@given@sidespace=\dimen262
+\mathindent=\dimen263
+\eq@final@linecount=\count320
+\eq@wdR=\dimen264
+\EQ@continue=\toks27
+\lr@level=\count321
+\GRP@queue=\toks28
+\GRP@box=\box62
+\GRP@wholebox=\box63
+\darraycolsep=\skip65
+\cur@row=\count322
+\cur@col=\count323
+\conditionsep=\skip66
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
  (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count305
-\scratchdimen=\dimen183
-\scratchbox=\box58
-\nofMPsegments=\count306
-\nofMParguments=\count307
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count308
-\MPscratchDim=\dimen184
-\MPnumerator=\count309
-\makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count324
+\scratchdimen=\dimen265
+\scratchbox=\box64
+\nofMPsegments=\count325
+\nofMParguments=\count326
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen266
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
+\everyMPtoPDFconversion=\toks30
 ) (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -244,77 +364,88 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
  (C:\Users\modde\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/modde/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3]
-<phase_plane_0.1.png, id=20, 887.315pt x 451.6875pt>
-File: phase_plane_0.1.png Graphic file (type png)
-<use phase_plane_0.1.png>
-Package pdftex.def Info: phase_plane_0.1.png  used on input line 84.
-(pdftex.def)             Requested size: 341.11534pt x 173.64175pt.
-<phase_plane_0.5.png, id=22, 887.315pt x 451.6875pt>
-File: phase_plane_0.5.png Graphic file (type png)
-<use phase_plane_0.5.png>
-Package pdftex.def Info: phase_plane_0.5.png  used on input line 85.
-(pdftex.def)             Requested size: 341.11534pt x 173.64175pt.
-<phase_plane_0.9.png, id=23, 887.315pt x 451.6875pt>
-File: phase_plane_0.9.png Graphic file (type png)
-<use phase_plane_0.9.png>
-Package pdftex.def Info: phase_plane_0.9.png  used on input line 86.
-(pdftex.def)             Requested size: 341.11534pt x 173.64175pt.
- [4] [5 <./phase_plane_0.1.png> <./phase_plane_0.5.png> <./phase_plane_0.9.png>]
-<CompositeFigure4-5.png, id=33, 1758.57pt x 761.84625pt>
+Overfull \hbox (16.38606pt too wide) in paragraph at lines 76--78
+[]\OT1/cmr/m/n/10 To ex-plic-itly de-fine this trap-ping re-gion, we in-tro-duce an en-ergy func-tion for the FitzHugh$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 Nagumo
+ []
+
+[4]
+<phase_plane_0.1_zoom.png, id=25, 903.375pt x 451.6875pt>
+File: phase_plane_0.1_zoom.png Graphic file (type png)
+<use phase_plane_0.1_zoom.png>
+Package pdftex.def Info: phase_plane_0.1_zoom.png  used on input line 120.
+(pdftex.def)             Requested size: 341.11534pt x 170.56094pt.
+<phase_plane_0.5_zoom.png, id=27, 903.375pt x 451.6875pt>
+File: phase_plane_0.5_zoom.png Graphic file (type png)
+<use phase_plane_0.5_zoom.png>
+Package pdftex.def Info: phase_plane_0.5_zoom.png  used on input line 121.
+(pdftex.def)             Requested size: 341.11534pt x 170.56094pt.
+<phase_plane_0.9_zoom.png, id=28, 903.375pt x 451.6875pt>
+File: phase_plane_0.9_zoom.png Graphic file (type png)
+<use phase_plane_0.9_zoom.png>
+Package pdftex.def Info: phase_plane_0.9_zoom.png  used on input line 122.
+(pdftex.def)             Requested size: 341.11534pt x 170.56094pt.
+ [5] [6 <./phase_plane_0.1_zoom.png> <./phase_plane_0.5_zoom.png> <./phase_plane_0.9_zoom.png>]
+<CompositeFigure4-5.png, id=39, 1758.57pt x 761.84625pt>
 File: CompositeFigure4-5.png Graphic file (type png)
 <use CompositeFigure4-5.png>
-Package pdftex.def Info: CompositeFigure4-5.png  used on input line 102.
+Package pdftex.def Info: CompositeFigure4-5.png  used on input line 138.
 (pdftex.def)             Requested size: 426.39256pt x 184.71843pt.
-<CompositeFigure6-7.png, id=34, 1758.57pt x 761.84625pt>
+<CompositeFigure6-7.png, id=40, 1758.57pt x 761.84625pt>
 File: CompositeFigure6-7.png Graphic file (type png)
 <use CompositeFigure6-7.png>
-Package pdftex.def Info: CompositeFigure6-7.png  used on input line 107.
+Package pdftex.def Info: CompositeFigure6-7.png  used on input line 143.
 (pdftex.def)             Requested size: 426.39256pt x 184.71843pt.
- [6 <./CompositeFigure4-5.png>] [7 <./CompositeFigure6-7.png>] [8]
-<cv_vs_sigma.png, id=47, 743.77875pt x 451.6875pt>
+ [7 <./CompositeFigure4-5.png>] [8 <./CompositeFigure6-7.png>] [9]
+<cv_vs_sigma.png, id=53, 743.77875pt x 451.6875pt>
 File: cv_vs_sigma.png Graphic file (type png)
 <use cv_vs_sigma.png>
-Package pdftex.def Info: cv_vs_sigma.png  used on input line 148.
+Package pdftex.def Info: cv_vs_sigma.png  used on input line 182.
 (pdftex.def)             Requested size: 319.79442pt x 194.20804pt.
-<spikecount_vs_sigma.png, id=48, 743.77875pt x 451.6875pt>
+ [10 <./cv_vs_sigma.png>]
+<spikecount_vs_sigma.png, id=58, 743.77875pt x 451.6875pt>
 File: spikecount_vs_sigma.png Graphic file (type png)
 <use spikecount_vs_sigma.png>
-Package pdftex.def Info: spikecount_vs_sigma.png  used on input line 157.
-(pdftex.def)             Requested size: 319.79442pt x 194.20804pt.
- [9 <./cv_vs_sigma.png>]
-<sample_trajectory.png, id=53, 743.77875pt x 451.6875pt>
+Package pdftex.def Info: spikecount_vs_sigma.png  used on input line 192.
+(pdftex.def)             Requested size: 277.15256pt x 168.3141pt.
+ [11 <./spikecount_vs_sigma.png>]
+<sample_trajectory.png, id=63, 743.77875pt x 451.6875pt>
 File: sample_trajectory.png Graphic file (type png)
 <use sample_trajectory.png>
-Package pdftex.def Info: sample_trajectory.png  used on input line 168.
+Package pdftex.def Info: sample_trajectory.png  used on input line 203.
 (pdftex.def)             Requested size: 383.7507pt x 233.05241pt.
- [10 <./spikecount_vs_sigma.png>] [11 <./sample_trajectory.png>] (main.aux)
+
+Overfull \hbox (16.02493pt too wide) in paragraph at lines 210--211
+[]\OT1/cmr/m/n/10 In this pa-per, we in-ves-ti-gated the dy-nam-ics of both de-ter-min-is-tic and stochas-tic FitzHugh$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 Nagumo
+ []
+
+[12 <./sample_trajectory.png>] (main.bbl [13]) [14] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3450 strings out of 467867
- 52994 string characters out of 5418334
- 460545 words of memory out of 5000000
- 32300 multiletter control sequences out of 15000+600000
- 636523 words of font info for 75 fonts, out of 8000000 for 9000
+ 4662 strings out of 467867
+ 69728 string characters out of 5418334
+ 485724 words of memory out of 5000000
+ 33486 multiletter control sequences out of 15000+600000
+ 636869 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,1217b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (11 pages, 1433646 bytes).
+ 65i,11n,86p,1722b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/modde/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (14 pages, 1350323 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
