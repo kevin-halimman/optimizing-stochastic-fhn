@@ -1,0 +1,29 @@
+# Build artifacts
+*.aux
+*.log
+*.blg
+*.bbl
+*.dvi
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# LaTeX source (keep locally)
+main.tex
+references.bib
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
